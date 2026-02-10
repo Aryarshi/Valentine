@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Be My Valentine 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    padding:20px;
+}
+
+.card{
+    width:100%;
+    max-width:420px;
+    background:white;
+    border-radius:25px;
+    padding:35px 25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#ff4d6d;
+    font-size:clamp(22px,5vw,30px);
+    margin-bottom:25px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+}
+
+button{
+    flex:1;
+    padding:16px;
+    font-size:18px;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    transition:0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+#yesBtn{
+    background:#ff4d6d;
+    color:white;
+}
+
+#noBtn{
+    background:#ced4da;
+    color:#333;
+}
+
+video{
+    width:100%;
+    margin-top:20px;
+    border-radius:15px;
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>💌 Can I be your Valentine?</h1>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">No 💔</button>
+    </div>
+
+    <video id="videoPlayer" controls playsinline></video>
+</div>
+
+<script>
+const yesBtn = document.getElementById("yesBtn");
+const noBtn = document.getElementById("noBtn");
+const video = document.getElementById("videoPlayer");
+
+yesBtn.onclick = () => {
+    video.style.display = "block";
+    video.src = "\sorry.mp4"; // 👉 PUT YES VIDEO URL HERE
+    video.play();
+};
+
+noBtn.onclick = () => {
+    video.style.display = "block";
+    video.src = "\Tum_ak_bahan_ki_lor_I_ho_yah_galat_hai_ACP_Sahab_funny_short_CID_cidmemes_480p.mp4"; // 👉 PUT NO VIDEO URL HERE
+    video.play();
+};
+</script>
+
+</body>
+</html>
