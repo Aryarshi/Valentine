@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +7,6 @@
 <title>Be My Valentine 💖</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -78,7 +76,6 @@ video{
     border-radius:15px;
     display:none;
 }
-
 </style>
 </head>
 
@@ -88,12 +85,11 @@ video{
 
     <h2>💌 Can I be your Valentine?</h2>
 
-    <!-- NAME FIELD -->
+    <!-- Name Field -->
     <input 
         type="text" 
         id="nameInput"
         placeholder="Enter your name ❤️"
-        required
     >
 
     <div class="buttons">
@@ -112,7 +108,7 @@ const noBtn = document.getElementById("noBtn");
 const video = document.getElementById("videoPlayer");
 const nameInput = document.getElementById("nameInput");
 
-async function sendResponse(answer, videoSrc){
+function playVideo(src){
 
     const name = nameInput.value.trim();
 
@@ -121,45 +117,20 @@ async function sendResponse(answer, videoSrc){
         return;
     }
 
-    // Play video
     video.style.display = "block";
-    video.src = videoSrc;
+    video.src = src;
     video.play();
-
-    /* ===============================
-       GOOGLE FORM INTEGRATION
-       =============================== */
-
-    fetch("https://docs.google.com/forms/d/e/1FAIpQLSclbXAKIAt6EitV53NERQorYEJBSl7PcvIWjZtAjnGsQo12HA/formResponse",{
-        method:"POST",
-        mode:"no-cors",
-        headers:{
-            "Content-Type":"application/x-www-form-urlencoded"
-        },
-        body:
-        "entry.106348218=" + encodeURIComponent(name) +
-        "entry.2098765751=" + encodeURIComponent(answer)
-    });
-
 }
 
 yesBtn.onclick = () => {
-    sendResponse("YES","sorry.mp4"); // 👉 replace video
+    playVideo("sorry.mp4"); // replace with your YES video
 };
 
 noBtn.onclick = () => {
-    sendResponse("NO","Tum_ak_bahan_ki_lor_I_ho_yah_galat_hai_ACP_Sahab_funny_short_CID_cidmemes_480p.mp4"); // 👉 replace video
-};
-
-yesBtn.onclick = () => {
-    sendResponse("YES","/sorry.mp4"); // 👉 replace video
+    playVideo("Tum_ak_bahan_ki_lor_I_ho_yah_galat_hai_ACP_Sahab_funny_short_CID_cidmemes_480p.mp4"); // replace with your NO video
 };
 
 </script>
 
 </body>
 </html>
-
-
-
-
