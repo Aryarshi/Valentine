@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body{
@@ -19,7 +20,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
     padding:20px;
 }
 
@@ -33,18 +34,10 @@ body{
     box-shadow:0 15px 40px rgba(0,0,0,0.2);
 }
 
-h2{
+h1{
     color:#ff4d6d;
-    margin-bottom:20px;
-}
-
-input{
-    width:100%;
-    padding:14px;
-    border-radius:12px;
-    border:1px solid #ddd;
-    margin-bottom:20px;
-    font-size:16px;
+    font-size:clamp(22px,5vw,30px);
+    margin-bottom:25px;
 }
 
 .buttons{
@@ -59,6 +52,12 @@ button{
     border:none;
     border-radius:40px;
     cursor:pointer;
+    transition:0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active{
+    transform:scale(0.95);
 }
 
 #yesBtn{
@@ -68,6 +67,7 @@ button{
 
 #noBtn{
     background:#ced4da;
+    color:#333;
 }
 
 video{
@@ -82,15 +82,7 @@ video{
 <body>
 
 <div class="card">
-
-    <h2>💌 Can I be your Valentine?</h2>
-
-    <!-- Name Field -->
-    <input 
-        type="text" 
-        id="nameInput"
-        placeholder="Enter your name ❤️"
-    >
+    <h1>💌 Can I be your Valentine?</h1>
 
     <div class="buttons">
         <button id="yesBtn">Yes 💖</button>
@@ -98,39 +90,27 @@ video{
     </div>
 
     <video id="videoPlayer" controls playsinline></video>
-
 </div>
 
 <script>
-
 const yesBtn = document.getElementById("yesBtn");
 const noBtn = document.getElementById("noBtn");
 const video = document.getElementById("videoPlayer");
-const nameInput = document.getElementById("nameInput");
-
-function playVideo(src){
-
-    const name = nameInput.value.trim();
-
-    if(!name){
-        alert("Please enter your name ❤️");
-        return;
-    }
-
-    video.style.display = "block";
-    video.src = src;
-    video.play();
-}
 
 yesBtn.onclick = () => {
-    playVideo("sorry.mp4"); // replace with your YES video
+    video.style.display = "block";
+    video.src = "sorry.mp4"; // 👉 PUT YES VIDEO
+    video.play();
 };
 
 noBtn.onclick = () => {
-    playVideo("Tum_ak_bahan_ki_lor_I_ho_yah_galat_hai_ACP_Sahab_funny_short_CID_cidmemes_480p.mp4"); // replace with your NO video
+    video.style.display = "block";
+    video.src = "Tum_ak_bahan_ki_lor_I_ho_yah_galat_hai_ACP_Sahab_funny_short_CID_cidmemes_480p.mp4"; // 👉 PUT NO VIDEO
+    video.play();
 };
-
 </script>
 
 </body>
 </html>
+
+Tum_ak_bahan_ki_lor_I_ho_yah_galat_hai_ACP_Sahab_funny_short_CID_cidmemes_480p.mp4
